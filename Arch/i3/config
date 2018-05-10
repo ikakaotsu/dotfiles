@@ -14,7 +14,7 @@ bindsym $mod+Return exec $term
 # Matar ventana activa
 bindsym $mod+Shift+q kill
 
-# Ejecuatr dmenu uso rofi como lanzador de apicaciones
+#Uso rofi como lanzador de apicaciones
 bindsym $mod+d exec i3-dmenu-desktop --dmenu='rofi -dmenu'
 
 #-------------Acciones Ventanas------------
@@ -77,7 +77,7 @@ mode "resize" {
 }
 bindsym $mod+r mode "resize"
 
-#------------------------------- Workspaces
+#--------------- Workspaces----------------
 set $ws1 "1"
 set $ws2 "2"
 set $ws3 "3"
@@ -88,7 +88,7 @@ set $ws7 "7"
 set $ws8 "8"
 set $ws9 "9"
 set $ws10 "10"
-# switch to workspace
+# cambiar de workspace
 bindsym $mod+1 workspace $ws1
 bindsym $mod+2 workspace $ws2
 bindsym $mod+3 workspace $ws3
@@ -99,7 +99,7 @@ bindsym $mod+7 workspace $ws7
 bindsym $mod+8 workspace $ws8
 bindsym $mod+9 workspace $ws9
 bindsym $mod+0 workspace $ws10
-# move focused container to workspace
+# moverse entre workspace
 bindsym $mod+Shift+1 move container to workspace $ws1
 bindsym $mod+Shift+2 move container to workspace $ws2
 bindsym $mod+Shift+3 move container to workspace $ws3
@@ -157,7 +157,7 @@ bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute 0 toggle # mute s
 # Controles Touchpad
 #bindsym XF86TouchpadToggle exec /some/path/toggletouchpad.sh # toggle touchpad
 
-##For moc:
+##Para moc:
 set $music xterm -e mocp 
 set $pause --no-startup-id mocp -G
 set $next --no-startup-id mocp -f
@@ -197,8 +197,8 @@ mode "$mode_system" {
 
 bindsym $mod+Shift+s mode "$mode_system"
 
-## Manual management of external displays
-# Set the shortcuts and what they do
+## Manejar pantallas Externas
+## Set the shortcuts and what they do
 set $mode_display Ext Screen (v) VGA ON, (h) HDMI ON, (x) VGA OFF, (y) HDMI OFF
 mode "$mode_display" {
     bindsym v exec --no-startup-id xrandr --output VGA-0 --auto --right-of LVDS, mode "default"
@@ -210,7 +210,7 @@ mode "$mode_display" {
     bindsym Return mode "default"
     bindsym Escape mode "default"
 }
-# Declare here the shortcut to bring the display selection menu
+# shortcut para mostrar menu
 bindsym $mod+p mode "$mode_display"
 
 #Ventana para calculadora
@@ -219,13 +219,16 @@ for_window [class="calc"] resize set 800 300
 for_window [class="calc"] move position center
 bindsym $mod+a exec $term -class calc -e bc -q 
 
+#Ventana conexion a Wifi
 for_window [class="wifi"] floating enable
 for_window [class="wifi"] resize set 600 500
 for_window [class="wifi"] move position center
 
+#Ventana Agenda(Calcurse)
 for_window [class="calcurse"] floating enable
 for_window [class="calcurse"] resize set 600 500
 for_window [class="calcurse"] move position center
 
+#Mostrar panel de audio(pulseaudio)
 bindsym $mod+Shift+a exec pavucontrol
 
