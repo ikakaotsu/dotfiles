@@ -1,6 +1,8 @@
 # Dotfiles of Ikakaotsu( A litte late)
 
 ![00](00.png)
+![01](01.png)
+![02](02.png)
 Distro Archlinux con i3wm-i3gaps-polybar
 Distro Archlniux with i3wm-i3gaps-polybar
 
